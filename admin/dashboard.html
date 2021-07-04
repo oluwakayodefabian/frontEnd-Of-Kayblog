@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/e1cab67604.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <div>
+                <nav>
+                    <ul>
+                        <h1 style=" font-family: sofiaRegular;">Admin Area</h1>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Posts</a></li>
+                        <li><a href="#">Users</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Welcome, Kayode</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bars" id="open-sidBar">
+                <i class="fas fa-bars md"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- sideBar -->
+    <aside id="sideBar">
+        <div class="close" id="close-sideBar">
+            <p>X</p>
+        </div>
+        <div class="logo">
+            <h1 style="font-family: sofiaRegular;" class="md-x"><a href="index.html" class="text-primary">Kay<span class="text-light">Blog</span></a></h1>
+        </div>
+        <nav>
+            <ul>
+                <h1 style=" font-family: sofiaRegular;" class="text-primary md">Admin Area</h1>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Posts</a></li>
+                <li><a href="#">Users</a></li>
+                <li><a href="#">Welcome, Kayode</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+            <div class="manage">
+                <div class="container">
+                    <div class="flex">
+                        <i class="fas fa-users-cog xl"></i>
+                        <h1 class="md-x pt-1 pl-1">Dashboard</h1>
+                        <span class="pt-2">Manage your site</span>
+                    </div>
+                    <div class="create-content">
+                        <select name="" id="">
+                            <option value="">Create content</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard -->
+            <div class="dashboard container bg-secondary text-light">
+                <h1>Dashboard</h1>
+            </div>
+            
+            <!-- Main COntents -->
+            <div class="website-overview">
+                <div class="container">
+                    <div class="grid">
+                        <div class="item-one-content">
+                            <h3 class="p-1 lead bg-secondary text-light">Dashboard</h3>
+                            <p>
+                                <span>categories</span>
+                                <span>50</span>
+                            </p>
+                            <p>
+                                <span>Posts</span>
+                                <span>500</span>
+                            </p>
+                            <p>
+                                <span><i class="fas fa-users"></i>Users</span>
+                                <span>5000</span>
+                            </p>
+                        </div>
+                        <div class="item-two-content pb-3">
+                           <h3 class="text-capitalize bg-secondary text-light p-1">website overview</h3>
+                           <div class="grid-4">
+                            <div>
+                                <p class="md text-center"><i class="fas fa-users"></i>500<span class="lead"> Users</span></p>
+                            </div>
+                                <div>
+                                    <p class="md text-center"><i class="fas fa-users"></i>50 <span class="lead">Posts</span></p>
+                                </div>
+                                <div>
+                                    <p class="md text-center"><i class="fas fa-users"></i>50 <span class="lead">Categories</span></p>
+                                </div>
+                                <div>
+                                    <p class="md text-center"><i class="fas fa-users"></i>1,250 <span class="lead">Visits</span></p>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="latest-users-card">
+                <h3 class="bg-secondary text-light p-1">Latest Users</h3>
+                <table>
+                    <thead>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Joined</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>johndoe@gmail.com</td>
+                            <td>Jan 23, 2021</td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>johndoe@gmail.com</td>
+                            <td>Jan 23, 2021</td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>johndoe@gmail.com</td>
+                            <td>Jan 23, 2021</td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>johndoe@gmail.com</td>
+                            <td>Jan 23, 2021</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </main>
+
+    <!-- Admin Footer -->
+    <footer class="admin-footer">
+        <p class="lead">&copy; 2021 | designed by Oluwakayode</p>
+    </footer>
+    <script>
+        /* Aside nav bar */
+            let open = false;
+
+            const openNavBar = document.querySelector("#open-sidBar");
+            let closeSideBar = document.querySelector("#close-sideBar");
+
+            const newDiv = document.createElement('div');
+            document.body.appendChild(newDiv);
+            newDiv.classList.add("bg-transparent");
+
+
+
+            openNavBar.addEventListener("click", () => {
+                if (open === false) {
+                    const sideBar = document.querySelector("#sideBar");
+                    closeSideBar = document.querySelector("#close-sideBar");
+                    sideBar.style.transform = "translateX(0%)";
+                    closeSideBar.style.transform = "translateY(0%)";
+                    newDiv.style.transform = "translateX(0%)";
+                }
+                open = true;
+            })
+
+
+            closeSideBar.addEventListener("click", () => {
+                if (open === true) {
+                    const sideBar = document.querySelector("#sideBar");
+                    sideBar.style.transform = "translateX(-100%)";
+                    const closeSideBar = document.querySelector("#close-sideBar");
+                    closeSideBar.style.transform = "translateY(-100%)";
+                    newDiv.style.transform = "translateX(-100%)";
+                }
+                open = false;
+            });
+
+    </script>
+</body>
+</html>
